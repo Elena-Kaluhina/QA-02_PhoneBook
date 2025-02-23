@@ -1,4 +1,4 @@
-package PhoneBook;
+package PhoneBook.model;
 
 public class User {
     private String email;
