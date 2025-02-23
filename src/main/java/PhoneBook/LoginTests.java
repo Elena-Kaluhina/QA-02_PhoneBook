@@ -1,5 +1,6 @@
 package PhoneBook;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase{
@@ -13,5 +14,15 @@ public class LoginTests extends TestBase{
         checkLogin();
     }
 
+    @Test
+    public void loginWithoutEmailTest(){
+
+        clickOnLoginLink();
+        fillInLoginForm(new User()
+               //.setEmail("kalughina1@gmail.com")
+                .setPassword("Password@1"));
+        clickOnLoginButton();
+        Assert.assertTrue(isAlertPresent());
+    }
 
 }

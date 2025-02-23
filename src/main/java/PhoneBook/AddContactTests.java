@@ -21,13 +21,38 @@ public class AddContactTests extends TestBase {
     public void addContactPositiveTest() {
         int contactsBefore = getContactsCount();
         System.out.println("Количество контактов ДО теста: " + contactsBefore);
-        addContactPositiveData(CONTACT_NAME);
+        //addContactPositiveData(CONTACT_NAME);
+        addContactPositiveData(new Contact()
+                .setName(CONTACT_NAME)
+                .setLastName("LastName")
+                .setPhoneNumber("1234567890")
+                .setEmail("kalughina1@gmail.com")
+                .setAddress("Germany, Berlin")
+                .setDescription("Some Description"));
         int contactsAfter = getContactsCount();
         System.out.println("Количество контактов ПОСЛЕ теста: " + contactsAfter);
         Assert.assertTrue(isContactAdded(CONTACT_NAME));
         Assert.assertEquals(contactsAfter, contactsBefore + 1);
     }
 
+    @Test
+    public void addContactWithoutDescriptionTest() {
+        int contactsBefore = getContactsCount();
+        System.out.println("Количество контактов ДО теста: " + contactsBefore);
+        //addContactPositiveData(CONTACT_NAME);
+        addContactPositiveData(new Contact()
+                .setName(CONTACT_NAME)
+                .setLastName("LastName")
+                .setPhoneNumber("1234567890")
+                //.setEmail("kalughina1@gmail.com")
+                .setAddress("Germany, Berlin")
+                //.setDescription("Some Description")
+                );
+        int contactsAfter = getContactsCount();
+        System.out.println("Количество контактов ПОСЛЕ теста: " + contactsAfter);
+        Assert.assertTrue(isContactAdded(CONTACT_NAME));
+        Assert.assertEquals(contactsAfter, contactsBefore + 1);
+    }
 
     @AfterMethod
     public void postCondition() {

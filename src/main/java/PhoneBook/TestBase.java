@@ -49,9 +49,11 @@ public class TestBase {
     }
 
     public void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+        if (text != null) {
+            click(locator);
+            driver.findElement(locator).clear();
+            driver.findElement(locator).sendKeys(text);
+        }
     }
 
     public void click(By locator) {
@@ -104,6 +106,17 @@ public class TestBase {
         click(By.xpath("//b[.='Save']"));
     }
 
+    protected void addContactPositiveData(Contact contact) {
+        click(By.xpath("//a[.='ADD']"));
+        type(By.xpath("//input[@placeholder='Name']"), contact.getName());
+        type(By.xpath("//input[@placeholder='Last Name']"), contact.getLastName());
+        type(By.xpath("//input[@placeholder='Phone']"), contact.getPhoneNumber());
+        type(By.xpath("//input[@placeholder='email']"), contact.getEmail());
+        type(By.xpath("//input[@placeholder='Address']"), contact.getAddress());
+        type(By.xpath("//input[@placeholder='description']"), contact.getDescription());
+        click(By.xpath("//b[.='Save']"));
+    }
+
     protected int getContactsCount() {
         if (isElementPresent(By.className(CONTACT_LOCATOR))) {
             return driver.findElements(By.className(CONTACT_LOCATOR)).size();
@@ -133,5 +146,10 @@ public class TestBase {
         int contactsBefore = getContactsCount();
         clickAndDeleteOneContact();
         new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.numberOfElementsToBe(By.className(CONTACT_LOCATOR), contactsBefore - 1));
+    }
+
+    public void fillInLoginForm(User user) {
+        typeEmail(user.getEmail());
+        typePassword(user.getPassword());
     }
 }
