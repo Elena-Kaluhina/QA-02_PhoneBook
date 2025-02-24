@@ -6,24 +6,23 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase{
 
-    @Test(invocationCount = 1)
+    @Test
     public void loginExistedUserPositiveTest(){
         app.getUserHelper().clickOnLoginLink();
-        app.getUserHelper().typeEmail("kalughina1@gmail.com");
+        app.getUserHelper().typeEmail("kalughina123@bk.ru");
         app.getUserHelper().typePassword("Password@1");
         app.getUserHelper().clickOnLoginButton();
         app.getUserHelper().checkLogin();
     }
 
     @Test
-    public void loginWithoutEmailTest(){
-
+    public void loginWOEmailNegativeTest(){
         app.getUserHelper().clickOnLoginLink();
+       // fillInLoginForm("Password@1");
         app.getUserHelper().fillInLoginForm(new User()
-               //.setEmail("kalughina1@gmail.com")
+                //.setEmail("kalughina123@bk.ru")
                 .setPassword("Password@1"));
         app.getUserHelper().clickOnLoginButton();
         Assert.assertTrue(app.getUserHelper().isAlertPresent());
     }
-
 }

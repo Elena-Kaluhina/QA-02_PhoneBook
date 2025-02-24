@@ -7,7 +7,7 @@ public class HomePageTests extends TestBase {
 
     @Test
     public void isHomeComponentPresentTest() {
-        Assert.assertTrue(app.getHomePageHelper(). isHomeComponentPresent(),
+        Assert.assertTrue( app.getHomePageHelper().isHomeComponentPresent(),
                 "Home component is found?: " + app.getHomePageHelper().isHomeComponentPresent());
     }
 }

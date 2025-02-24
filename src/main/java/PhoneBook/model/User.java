@@ -4,7 +4,6 @@ public class User {
     private String email;
     private String password;
 
-
     public User setEmail(String email) {
         this.email = email;
         return this;

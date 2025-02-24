@@ -12,9 +12,25 @@ repositories {
 dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.28.1' // зависимость от библиотеки selenium
     implementation 'org.testng:testng:7.11.0' // зависимость от библиотеки testng
-    implementation 'org.slf4j:slf4j-nop:2.0.7' // зависимость от библиотеки slf4j
+    //implementation 'org.slf4j:slf4j-nop:2.0.7' // зависимость от библиотеки slf4j для логирования
+    implementation 'ch.qos.logback:logback-classic:1.5.16' // зависимость от Logback для логирования
 }
 
 test {
     useTestNG()
 }
+
+def registerTask(String taskName, String suitePath) {
+    tasks.register(taskName, Test) {
+        useTestNG() {
+            suites suitePath
+        }
+        if (project.hasProperty('browser')) {
+            systemProperty 'browser', "${browser}"
+        }
+    }
+}
+
+registerTask('home', 'src/test/resources/home.xml')
+registerTask('smoky', 'src/test/resources/smoke.xml')
+registerTask('regression', 'src/test/resources/regression.xml')

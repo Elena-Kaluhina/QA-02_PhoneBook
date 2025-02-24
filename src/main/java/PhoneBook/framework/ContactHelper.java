@@ -29,7 +29,7 @@ public class ContactHelper extends BaseHelper {
         // enter phone
         type(By.xpath("//input[@placeholder='Phone']"), "1234567890");
         // enter email
-        type(By.xpath("//input[@placeholder='email']"), "kalughina1@gmail.com");
+        type(By.xpath("//input[@placeholder='email']"), "kalughina123@bk.ru");
         // enter address
         type(By.xpath("//input[@placeholder='Address']"), "Germany, Berlin");
         // enter description
@@ -42,7 +42,7 @@ public class ContactHelper extends BaseHelper {
         click(By.xpath("//a[.='ADD']"));
         type(By.xpath("//input[@placeholder='Name']"), contact.getName());
         type(By.xpath("//input[@placeholder='Last Name']"), contact.getLastName());
-        type(By.xpath("//input[@placeholder='Phone']"), contact.getPhoneNumber());
+        type(By.xpath("//input[@placeholder='Phone']"), contact.getPhone());
         type(By.xpath("//input[@placeholder='email']"), contact.getEmail());
         type(By.xpath("//input[@placeholder='Address']"), contact.getAddress());
         type(By.xpath("//input[@placeholder='description']"), contact.getDescription());

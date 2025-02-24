@@ -18,7 +18,7 @@ public class AddContactTests extends TestBase {
 
     @BeforeMethod
     public void precondition() {
-        app.getUserHelper().login("kalughina1@gmail.com", "Password@1");
+        app.getUserHelper().login("kalughina123@bk.ru", "Password@1");
     }
 
     @Test
@@ -29,8 +29,8 @@ public class AddContactTests extends TestBase {
         app.getContactHelper().addContactPositiveData(new Contact()
                 .setName(CONTACT_NAME)
                 .setLastName("LastName")
-                .setPhoneNumber("1234567890")
-                .setEmail("kalughina1@gmail.com")
+                .setPhone("1234567890")
+                .setEmail("admin@gmail.com")
                 .setAddress("Germany, Berlin")
                 .setDescription("Some Description"));
         int contactsAfter = app.getContactHelper().getContactsCount();
@@ -40,25 +40,25 @@ public class AddContactTests extends TestBase {
     }
 
     @Test
-    public void addContactWithoutDescriptionTest() {
+    public void addContactWODescriptionPositiveTest() {
         int contactsBefore = app.getContactHelper().getContactsCount();
         System.out.println("Количество контактов ДО теста: " + contactsBefore);
         //addContactPositiveData(CONTACT_NAME);
         app.getContactHelper().addContactPositiveData(new Contact()
                 .setName(CONTACT_NAME)
                 .setLastName("LastName")
-                .setPhoneNumber("1234567890")
-                .setEmail("kalughina1@gmail.com")
+                .setPhone("1234567890")
+                .setEmail("admin@gmail.com")
                 .setAddress("Germany, Berlin")
                 //.setDescription("Some Description")
-                );
+        );
         int contactsAfter = app.getContactHelper().getContactsCount();
         System.out.println("Количество контактов ПОСЛЕ теста: " + contactsAfter);
         Assert.assertTrue(app.getContactHelper().isContactAdded(CONTACT_NAME));
         Assert.assertEquals(contactsAfter, contactsBefore + 1);
     }
 
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void postCondition() {
         // Сколько контактов на странице
         int contactsBefore = app.getContactHelper().getContactsCount();
@@ -68,10 +68,8 @@ public class AddContactTests extends TestBase {
             System.out.println("Количество контактов 0. Нечего удалять");
             return;
         }
-
         app.getContactHelper().click(By.className(CONTACT_LOCATOR));
         app.getContactHelper().click(By.xpath("//button[.='Remove']"));
-
         // Ждём, пока не выполнено условие:
         // условие: уменьшилось ли количество контактов по сравнению с исходным значением contactsBefore
         //new WebDriverWait(driver, Duration.ofSeconds(2)).until(driver -> getContactsCount() < contactsBefore);

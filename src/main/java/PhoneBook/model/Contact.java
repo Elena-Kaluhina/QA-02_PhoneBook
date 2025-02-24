@@ -3,7 +3,7 @@ package PhoneBook.model;
 public class Contact {
     private String name;
     private String lastName;
-    private String phoneNumber;
+    private String phone;
     private String email;
     private String address;
     private String description;
@@ -18,8 +18,8 @@ public class Contact {
         return this;
     }
 
-    public Contact setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public Contact setPhone(String phone) {
+        this.phone = phone;
         return this;
     }
 
@@ -46,8 +46,8 @@ public class Contact {
         return lastName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
     public String getEmail() {

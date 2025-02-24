@@ -13,10 +13,11 @@ import java.time.Duration;
 import static PhoneBook.framework.ContactHelper.CONTACT_LOCATOR;
 import static PhoneBook.framework.ContactHelper.CONTACT_NAME;
 
+
 public class DeleteContactTests extends TestBase {
     @BeforeMethod
     public void precondition() {
-        app.getUserHelper().login("portishead2025@gmail.com", "Password@1");
+        app.getUserHelper().login("kalughina123@bk.ru", "Password@1");
         app.getContactHelper().addContactPositiveData(CONTACT_NAME);
     }
 
