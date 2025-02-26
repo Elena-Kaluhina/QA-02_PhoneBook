@@ -1,0 +1,4 @@
+13:32:56.052 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedUserPositiveTest]
+13:33:01.087 [main] INFO  PhoneBook.TestBase -- LOGIN link is present. No need to Sign Out.
+13:33:01.143 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2025!!@gmail.com
+13:33:01.299 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1

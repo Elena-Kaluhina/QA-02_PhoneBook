@@ -1,0 +1,5 @@
+10:35:13.121 [main] INFO  PhoneBook.TestBase -- Test is started: [CreateAccountNegativeSoftAssertTest]
+10:35:14.542 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [CreateAccountNegativeSoftAssertTest]
+10:35:14.545 [main] INFO  PhoneBook.TestBase -- Test is started: [CreateAccountPositiveTest]
+10:35:15.134 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [CreateAccountPositiveTest]
+10:35:15.136 [main] INFO  PhoneBook.TestBase -- Test is started: [CreateAccountNegativeTest]

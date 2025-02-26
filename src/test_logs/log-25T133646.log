@@ -1,0 +1,10 @@
+13:36:48.139 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedUserPositiveTest]
+13:36:53.156 [main] INFO  PhoneBook.TestBase -- LOGIN link is present. No need to Sign Out.
+13:36:53.206 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2025!!@gmail.com
+13:36:53.359 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+13:36:55.807 [main] ERROR PhoneBook.TestBase -- Test is FAILED: [loginExistedUserPositiveTest], Screenshot: /Users/admin/Desktop/Selenium Intelligie/02_PhoneBook/src/test_screenshots/screen-1740487015797.png]
+13:36:55.809 [main] INFO  PhoneBook.TestBase -- Test is started: [loginWOEmailNegativeTest]
+13:37:00.825 [main] INFO  PhoneBook.TestBase -- LOGIN link is present. No need to Sign Out.
+13:37:00.868 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: null
+13:37:00.868 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+13:37:01.523 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginWOEmailNegativeTest]

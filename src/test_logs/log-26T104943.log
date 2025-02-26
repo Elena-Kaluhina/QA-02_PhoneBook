@@ -1,0 +1,2 @@
+10:49:45.904 [main] INFO  PhoneBook.TestBase -- Test is started: [CreateAccountNegativeTest]
+10:49:47.291 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [CreateAccountNegativeTest]

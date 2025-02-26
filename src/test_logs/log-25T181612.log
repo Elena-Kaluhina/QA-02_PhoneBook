@@ -1,0 +1,5 @@
+18:16:14.299 [main] INFO  PhoneBook.TestBase -- Test is started: [addContactDataProviderPositiveTest]
+18:16:14.352 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2025@gmail.com
+18:16:14.518 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+18:16:16.593 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [addContactDataProviderPositiveTest]
+18:16:16.594 [main] INFO  PhoneBook.TestBase -- Test is started: [addContactDataProviderPositiveTest]

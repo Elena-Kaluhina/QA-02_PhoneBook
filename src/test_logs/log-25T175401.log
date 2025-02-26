@@ -1,0 +1,30 @@
+17:54:04.479 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedDataPositiveTest]
+17:54:09.491 [main] INFO  PhoneBook.TestBase -- LOGIN link is present. No need to Sign Out.
+17:54:09.557 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2025@gmail.com
+17:54:09.713 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+17:54:10.541 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginExistedDataPositiveTest]
+17:54:10.545 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedUserDataProviderPositiveTest]
+17:54:10.552 [main] INFO  PhoneBook.TestBase -- User already Logged in. Sign Out..
+17:54:10.629 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2024@gmail.com
+17:54:10.719 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+17:54:11.051 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginExistedUserDataProviderPositiveTest]
+17:54:11.053 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedUserDataProviderPositiveTest]
+17:54:11.060 [main] INFO  PhoneBook.TestBase -- User already Logged in. Sign Out..
+17:54:11.125 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2025@gmail.com
+17:54:11.207 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+17:54:11.544 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginExistedUserDataProviderPositiveTest]
+17:54:11.546 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedUserDataProviderPositiveTest]
+17:54:11.552 [main] INFO  PhoneBook.TestBase -- User already Logged in. Sign Out..
+17:54:11.617 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2026@gmail.com
+17:54:11.708 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+17:54:12.048 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginExistedUserDataProviderPositiveTest]
+17:54:12.049 [main] INFO  PhoneBook.TestBase -- Test is started: [loginExistedUserPositiveTest]
+17:54:12.056 [main] INFO  PhoneBook.TestBase -- User already Logged in. Sign Out..
+17:54:12.124 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: portishead2025@gmail.com
+17:54:12.203 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+17:54:12.738 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginExistedUserPositiveTest]
+17:54:12.739 [main] INFO  PhoneBook.TestBase -- Test is started: [loginWOEmailNegativeTest]
+17:54:12.745 [main] INFO  PhoneBook.TestBase -- User already Logged in. Sign Out..
+17:54:12.816 [main] INFO  PhoneBook.framework.UserHelper -- Typing email: null
+17:54:12.817 [main] INFO  PhoneBook.framework.UserHelper -- Typing password: Password@1
+17:54:13.447 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [loginWOEmailNegativeTest]
