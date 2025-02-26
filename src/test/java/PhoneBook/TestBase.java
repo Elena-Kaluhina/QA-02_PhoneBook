@@ -20,18 +20,18 @@ public class TestBase {
 
     @BeforeSuite
     public void beforeSuite(){
-        app.init();
+        //app.init();
     }
 
     @BeforeMethod
     public void setUp(Method method) {
         logger.info("Test is started: [" + method.getName() + "]");
-        //app.init(); //мы перенесли инициализацию в BeforeSuite
+        app.init(); //мы перенесли инициализацию в BeforeSuite
     }
 
     @AfterMethod
     public void tearDown(Method method, ITestResult result) {
-        //app.stop(); //мы перенесли остановку в AfterSuite
+        app.stop(); //мы перенесли остановку в AfterSuite
         if (result.isSuccess()){
             logger.info("Test is PASSED: [" + method.getName() + "]");
         } else {
@@ -41,7 +41,7 @@ public class TestBase {
 
     @AfterSuite(enabled = true)
     public void afterSuite(){
-        app.stop();
+        //app.stop();
     }
 
 }

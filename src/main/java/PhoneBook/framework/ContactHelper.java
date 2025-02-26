@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class ContactHelper extends BaseHelper {
+    public static final String CONTACT_LOCATOR = "contact-item_card__2SOIM";
 
     public ContactHelper(WebDriver driver) {
         super(driver);
@@ -49,14 +50,14 @@ public class ContactHelper extends BaseHelper {
     }
 
     public int getContactsCount() {
-        if (isElementPresent(By.className(ContactData.CONTACT_LOCATOR))) {
-            return driver.findElements(By.className(ContactData.CONTACT_LOCATOR)).size();
+        if (isElementPresent(By.className(CONTACT_LOCATOR))) {
+            return driver.findElements(By.className(CONTACT_LOCATOR)).size();
         }
         return 0;
     }
 
     public boolean isContactAdded(String textToFind) {
-        List<WebElement> contacts = driver.findElements(By.className(ContactData.CONTACT_LOCATOR));
+        List<WebElement> contacts = driver.findElements(By.className(CONTACT_LOCATOR));
         for(WebElement element : contacts){
             if(element.getText().contains(textToFind))
                 return true;
@@ -65,17 +66,17 @@ public class ContactHelper extends BaseHelper {
     }
 
     public void clickAndDeleteOneContact() {
-        click(By.className(ContactData.CONTACT_LOCATOR));
+        click(By.className(CONTACT_LOCATOR));
         click(By.xpath("//button[.='Remove']"));
     }
 
     public boolean hasContacts() {
-        return isElementPresent(By.className(ContactData.CONTACT_LOCATOR));
+        return isElementPresent(By.className(CONTACT_LOCATOR));
     }
 
     public void deleteFirstContact() {
         int contactsBefore = getContactsCount();
         clickAndDeleteOneContact();
-        new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.numberOfElementsToBe(By.className(ContactData.CONTACT_LOCATOR), contactsBefore - 1));
+        new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.numberOfElementsToBe(By.className(CONTACT_LOCATOR), contactsBefore - 1));
     }
 }

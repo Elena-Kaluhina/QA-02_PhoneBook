@@ -4,6 +4,8 @@ import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.time.Duration;
 
 public class BaseHelper {
     protected WebDriver driver;
+    Logger logger = LoggerFactory.getLogger(BaseHelper.class);
 
     public BaseHelper(WebDriver driver) {
         this.driver = driver;
@@ -39,6 +42,7 @@ public class BaseHelper {
     }
 
     public void click(By locator) {
+        //logger.info("Clicked by locator: " + locator);
         driver.findElement(locator).click();
     }
 

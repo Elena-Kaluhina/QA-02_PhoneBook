@@ -11,6 +11,8 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+import static PhoneBook.framework.ContactHelper.CONTACT_LOCATOR;
+
 
 public class DeleteContactTests extends TestBase {
     @BeforeMethod
@@ -24,7 +26,7 @@ public class DeleteContactTests extends TestBase {
         int contactsBefore = app.getContactHelper().getContactsCount();
         app.getContactHelper().clickAndDeleteOneContact();
         new WebDriverWait(app.driver, Duration.ofSeconds(2))
-                .until(ExpectedConditions.numberOfElementsToBe(By.className(ContactData.CONTACT_LOCATOR), contactsBefore - 1));
+                .until(ExpectedConditions.numberOfElementsToBe(By.className(CONTACT_LOCATOR), contactsBefore - 1));
         int contactsAfter = app.getContactHelper().getContactsCount();
         Assert.assertEquals(contactsAfter, contactsBefore - 1);
     }

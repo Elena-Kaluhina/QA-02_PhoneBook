@@ -15,29 +15,34 @@ public class UserHelper extends BaseHelper {
 
     Logger logger = LoggerFactory.getLogger(UserHelper.class);
 
-    public void typePassword(String password) {
+    public UserHelper typePassword(String password) {
         logger.info("Typing password: " + password);
         type(By.name("password"), password);
+        return this;
     }
 
-    public void typeEmail(String email) {
+    public UserHelper typeEmail(String email) {
         logger.info("Typing email: " + email);
         type(By.name("email"), email);
+        return this;
     }
 
-    public void clickOnLoginButton() {
+    public UserHelper clickOnLoginButton() {
 
         click(By.name("login"));
+        return this;
     }
 
-    public void clickOnLoginLink() {
+    public UserHelper clickOnLoginLink() {
 
         click(By.xpath("//a[.='LOGIN']"));
+        return this;
     }
 
-    public void checkLogin() {
+    public UserHelper checkLogin() {
 
         Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
+        return this;
     }
 
     public void login(String email, String password) {

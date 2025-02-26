@@ -8,6 +8,23 @@ public class Contact {
     private String address;
     private String description;
 
+    /**
+     мы сгенертровали toString для того, чтобы у нас в консоли выводилась корректно информация о
+     наших контактах вместо различных кракозябр
+     */
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Contact{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", phone='").append(phone).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", address='").append(address).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     public Contact setName(String name) {
         this.name = name;
         return this;
