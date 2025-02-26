@@ -1,5 +1,6 @@
 package PhoneBook;
 
+import PhoneBook.data.UserData;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,11 +15,11 @@ public class CreateAccountTests extends TestBase{
         // Enter 'email' By.name("email")
         app.driver.findElement(By.name("email")).click();
         app.driver.findElement(By.name("email")).clear();
-        app.driver.findElement(By.name("email")).sendKeys("kalughina"+ System.currentTimeMillis() +"@gmail.com");
+        app.driver.findElement(By.name("email")).sendKeys(UserData.RANDOM_EMAIL);
         // Enter 'password' By.name("password")
         app.driver.findElement(By.name("password")).click();
         app.driver.findElement(By.name("password")).clear();
-        app.driver.findElement(By.name("password")).sendKeys("Password@1");
+        app.driver.findElement(By.name("password")).sendKeys(UserData.VALID_PASSWORD);
         // Click on 'Registration' button By.name("registration")
         app.driver.findElement(By.name("registration")).click();
         //Assert button //button[.='Sign Out']
@@ -31,10 +32,10 @@ public class CreateAccountTests extends TestBase{
         app.driver.findElement(By.xpath("//a[.='LOGIN']")).click();
         app.driver.findElement(By.name("email")).click();
         app.driver.findElement(By.name("email")).clear();
-        app.driver.findElement(By.name("email")).sendKeys("kalughina123@bk.ru");
+        app.driver.findElement(By.name("email")).sendKeys("portishead2027@gmail.com");
         app.driver.findElement(By.name("password")).click();
         app.driver.findElement(By.name("password")).clear();
-        app.driver.findElement(By.name("password")).sendKeys("Password@1");
+        app.driver.findElement(By.name("password")).sendKeys(UserData.VALID_PASSWORD);
         app.driver.findElement(By.name("registration")).click();
 //      isAlertPresent();
         Assert.assertTrue(app.getContactHelper().isAlertPresent());
@@ -47,10 +48,10 @@ public class CreateAccountTests extends TestBase{
         app.driver.findElement(By.xpath("//a[.='LOGIN']")).click();
         app.driver.findElement(By.name("email")).click();
         app.driver.findElement(By.name("email")).clear();
-        app.driver.findElement(By.name("email")).sendKeys("kalughina123@bk.ru");
+        app.driver.findElement(By.name("email")).sendKeys(UserData.VALID_EMAIL);
         app.driver.findElement(By.name("password")).click();
         app.driver.findElement(By.name("password")).clear();
-        app.driver.findElement(By.name("password")).sendKeys("Password@1");
+        app.driver.findElement(By.name("password")).sendKeys(UserData.VALID_PASSWORD);
         app.driver.findElement(By.name("registration")).click();
         /*
          * В Java, SoftAssert — это класс, предоставляемый библиотекой TestNG, который используется для выполнения "мягких"

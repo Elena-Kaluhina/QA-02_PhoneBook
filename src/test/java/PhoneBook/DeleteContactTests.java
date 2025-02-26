@@ -1,5 +1,6 @@
 package PhoneBook;
 
+import PhoneBook.data.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,15 +11,12 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-import static PhoneBook.framework.ContactHelper.CONTACT_LOCATOR;
-import static PhoneBook.framework.ContactHelper.CONTACT_NAME;
-
 
 public class DeleteContactTests extends TestBase {
     @BeforeMethod
     public void precondition() {
-        app.getUserHelper().login("kalughina123@bk.ru", "Password@1");
-        app.getContactHelper().addContactPositiveData(CONTACT_NAME);
+        app.getUserHelper().login("portishead2025@gmail.com", "Password@1");
+        app.getContactHelper().addContactPositiveData(ContactData.NAME);
     }
 
     @Test
@@ -26,7 +24,7 @@ public class DeleteContactTests extends TestBase {
         int contactsBefore = app.getContactHelper().getContactsCount();
         app.getContactHelper().clickAndDeleteOneContact();
         new WebDriverWait(app.driver, Duration.ofSeconds(2))
-                .until(ExpectedConditions.numberOfElementsToBe(By.className(CONTACT_LOCATOR), contactsBefore - 1));
+                .until(ExpectedConditions.numberOfElementsToBe(By.className(ContactData.CONTACT_LOCATOR), contactsBefore - 1));
         int contactsAfter = app.getContactHelper().getContactsCount();
         Assert.assertEquals(contactsAfter, contactsBefore - 1);
     }

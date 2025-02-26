@@ -1,0 +1,4 @@
+13:34:00.906 [main] INFO  PhoneBook.TestBase -- Test is started: [addContactWODescriptionPositiveTest]
+13:34:00.957 [main] INFO  PhoneBook.fw.UserHelper -- Typing email: portishead2025@gmail.com
+13:34:01.065 [main] INFO  PhoneBook.fw.UserHelper -- Typing password: Password@1
+13:34:04.109 [main] INFO  PhoneBook.TestBase -- Test is PASSED: [addContactWODescriptionPositiveTest]
